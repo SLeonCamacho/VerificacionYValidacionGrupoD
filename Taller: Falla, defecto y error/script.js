@@ -13,22 +13,22 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     const password = document.getElementById('password').value;
 
     intentos++;
-    // Verificar si las credenciales ingresadas coinciden con las credenciales correctas
-    if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
-        alert('Inicio de sesión exitoso');
-        // Aquí se debería redirigir al usuario o cambiar la interfaz para indicar el éxito del inicio de sesión
+
+    // Fallo: Se supone que el límite es de tres intentos, pero debido a un error lógico,
+    // el sistema permite un intento adicional.
+    // Defecto: Uso incorrecto del operador, debería ser '>'
+    if (intentos >= 3) {
+        alert('Has superado el número de intentos');
+        // Error: El formulario no se bloquea después de superar los intentos
+        // Debería haber una lógica aquí para deshabilitar el formulario
     } else {
-        alert('Usuario o contraseña incorrectas');
-        // Fallo: Se supone que el límite es de tres intentos, pero debido a un error lógico,
-        // el sistema permite un intento adicional.
-        // Defecto: Uso incorrecto del operador, debería ser '>'
-        if (intentos >= 3) {
-            alert('Has superado el número de intentos');
-            // Error: El formulario no se bloquea después de superar los intentos
-            // Debería haber una lógica aquí para deshabilitar el formulario
+        // Lógica para verificar las credenciales del usuario (simulada aquí)
+        console.log('Verificando credenciales...');
+        if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
+            alert('Inicio de sesión exitoso');
+        // Aquí se debería redirigir al usuario o cambiar la interfaz para indicar el éxito del inicio de sesión
         } else {
-            // Lógica para verificar las credenciales del usuario (simulada aquí)
-            console.log('Verificando credenciales...');
+            alert('Usuario o contraseña incorrectas >:v');
         }
     }
 });
