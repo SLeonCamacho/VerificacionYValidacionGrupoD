@@ -20,7 +20,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         // Error: El formulario no se bloquea después de superar los intentos
         // Debería haber una lógica aquí para deshabilitar el formulario
     } else {
-        intentos++;
         // Lógica para verificar las credenciales del usuario (simulada aquí)
         console.log('Verificando credenciales...');
         alert('Intento número ' + intentos);
@@ -29,6 +28,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         // Aquí se debería redirigir al usuario o cambiar la interfaz para indicar el éxito del inicio de sesión
         } else {
             alert('Usuario o contraseña incorrectas >:v');
+            intentos++;
         }
     }
 });
