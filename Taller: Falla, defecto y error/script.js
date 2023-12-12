@@ -18,14 +18,13 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     if (intentos >= 3) {
         alert('Has superado el número de intentos');
         // Error: El formulario no se bloquea después de superar los intentos
-        // Debería haber una lógica aquí para deshabilitar el formulario
     } else {
-        // Lógica para verificar las credenciales del usuario (simulada aquí)
         console.log('Verificando credenciales...');
         alert('Intento número ' + intentos);
         if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
             alert('Inicio de sesión exitoso');
-        // Aquí se debería redirigir al usuario o cambiar la interfaz para indicar el éxito del inicio de sesión
+            // Redirigir al usuario a bienvenida.html
+            window.location.href = 'bienvenida.html';
         } else {
             alert('Usuario o contraseña incorrectas >:v');
             intentos++;
