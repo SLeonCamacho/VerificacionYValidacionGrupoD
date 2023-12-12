@@ -1,5 +1,4 @@
 // JavaScript: Lógica para limitar intentos de inicio de sesión con fallos y errores
-console.log('Ultimo probando');
 let intentos = 0;
 const credencialesCorrectas = {
     username: "usuario123",
