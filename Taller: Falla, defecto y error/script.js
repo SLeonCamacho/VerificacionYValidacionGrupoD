@@ -12,8 +12,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    intentos++;
-
     // Fallo: Se supone que el límite es de tres intentos, pero debido a un error lógico,
     // el sistema permite un intento adicional.
     // Defecto: Uso incorrecto del operador, debería ser '>'
@@ -22,8 +20,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         // Error: El formulario no se bloquea después de superar los intentos
         // Debería haber una lógica aquí para deshabilitar el formulario
     } else {
+        intentos++;
         // Lógica para verificar las credenciales del usuario (simulada aquí)
         console.log('Verificando credenciales...');
+        alert('Intento número ' + intentos);
         if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
             alert('Inicio de sesión exitoso');
         // Aquí se debería redirigir al usuario o cambiar la interfaz para indicar el éxito del inicio de sesión
