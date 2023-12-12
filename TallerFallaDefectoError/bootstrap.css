@@ -25,8 +25,31 @@ body {
 .input-container {
     display: flex;
     align-items: center;
+    justify-content:flex-start;
+
+    button {
+       color: chocolate; 
+    }
 }
 
+.input-container input:focus {
+    display: flex;
+    align-items: center;
+    background-color: #65e5e7b9;
+    animation: bubbleBurst 0.5s ease;
+}
+
+@keyframes bubbleBurst {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(0.98);
+    }
+}
 .material-icons {
     font-size: 50px;
     color: black;

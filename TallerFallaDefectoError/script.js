@@ -15,18 +15,28 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
     // el sistema permite un intento adicional.
     // Defecto: Uso incorrecto del operador, debería ser '>='
     if (intentos > 3) {
-        alert('Has superado el número de intentos');
+        showAlert('Has superado el número de intentos')
         // Error: El formulario no se bloquea después de superar los intentos
     } else {
         console.log('Verificando credenciales...');
-        alert('Intento número ' + intentos);
+        showAlert('Intento número ' + intentos);
+        console.log('Intento número ' + intentos);
+
         if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
-            alert('Inicio de sesión exitoso');
+            showAlert('Inicio de sesión exitoso');
             // Redirigir al usuario a bienvenida.html
             window.location.href = 'bienvenida.html';
         } else {
-            alert('Usuario o contraseña incorrectas >:v');
+            showAlert('Usuario o contraseña incorrectas >:v');
+            document.getElementById('username').value = "";
+            document.getElementById('password').value = "";
             intentos++;
         }
     }
 });
+
+function showAlert(message) {
+    const customToast = new bootstrap.Toast(document.getElementById('customToast'));
+    document.querySelector('.toast-body').textContent = message;
+    customToast.show();
+}
