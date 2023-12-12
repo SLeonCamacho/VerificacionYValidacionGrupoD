@@ -1,0 +1,47 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #daf0f073;
+}
+
+#GroupTitle {
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    background-color: #4bc0c2b9;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 50px 300px;
+    text-align: center;
+}
+
+li {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0;
+    padding: 20px 0px;
+    background-color: #90dce677;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 30px;
+}
+
+a:hover {
+    color: #e7ebee;
+}
+
+.material-icons {
+    font-size: 20px;
+    color: black;
+}
