@@ -22,8 +22,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
         showAlert('Intento número ' + intentos);
         console.log('Intento número ' + intentos);
 
-        if(username === credencialesCorrectas.username && password === credencialesCorrectas.password) {
+        // Fallo: Se supone que el sistema debe comprobar que el usuario y la contraseña sean correctos,
+        // pero debido a un error del programador, el sistema permite el inicio de sesión ya sea con el usuario o la contraseña correcta.
+        // Defecto: Uso incorrecto del operador, debería ser '&&'
+        if(username === credencialesCorrectas.username || password === credencialesCorrectas.password) {
             showAlert('Inicio de sesión exitoso');
+            // Error: El sistema ingresa al usuario aunque la contraseña sea incorrecta y viceversa
             // Redirigir al usuario a bienvenida.html
             window.location.href = 'bienvenida.html';
         } else {
