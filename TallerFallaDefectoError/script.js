@@ -31,7 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event){
             // Redirigir al usuario a bienvenida.html
             window.location.href = 'bienvenida.html';
         } else {
-            showAlert('Usuario o contraseña incorrectas >:v');
+            showAlert('Usuario o contraseña incorrectas >:v Intento: '+(intentos+1) +'/3');
             document.getElementById('username').value = "";
             document.getElementById('password').value = "";
             intentos++;
