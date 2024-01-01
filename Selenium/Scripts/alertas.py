@@ -1,11 +1,12 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 
 driver = webdriver.Firefox()
-driver.get("https://sleoncamacho.github.io/VerificacionYValidacionGrupoD/Selenium/index.html")
+driver.get("file:///ruta/a/tu/pagina_prueba.html")  # Asegúrate de usar la ruta correcta a tu archivo HTML
 
-# Suponiendo que hay un botón que al hacer clic muestra una alerta
-boton = driver.find_element_by_id("botonAlerta")
+# Localizar el botón por su ID
+boton = driver.find_element(By.ID, "botonAlerta")
 boton.click()
 
 # Cambiar al alert y aceptarlo
